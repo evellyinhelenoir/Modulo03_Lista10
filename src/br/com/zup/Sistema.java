@@ -44,6 +44,7 @@ public class Sistema {
                 System.out.println(consumidor);
             }else if (opcao == 3){
                 pesquisarFaturas(capturarDados("Digite o email do consumidor.").nextLine());
+                System.out.println();
             }else if (opcao == 4 ){
                 System.out.println("Obrigada por utilizar nossos serviços!");
                 loop = false;

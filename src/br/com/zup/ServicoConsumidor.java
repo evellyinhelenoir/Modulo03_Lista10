@@ -19,6 +19,13 @@ public class ServicoConsumidor {
         }
         return null;
     }
+    public static Consumidor verificarEmailConsumidor(String email) throws Exception{
+        for(Consumidor referencia : consumidores) {
+            if (referencia.getEmail().equalsIgnoreCase(email)) {
+                return referencia;
+            }
+        }throw new Exception("Email não está cadastrado");
+    }
     public static Consumidor cadastrarConsumidores(String nome, String email)throws Exception{
         verificarEmailValido(email);
         verificarSeOEmailJaEstaCadastrado(email);

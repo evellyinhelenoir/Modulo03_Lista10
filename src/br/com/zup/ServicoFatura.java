@@ -7,7 +7,7 @@ public class ServicoFatura {
     private static List<Fatura> faturas = new ArrayList<>();
 
     public static Fatura cadastrarFaturas(String email, double valor, String dataVencimento) throws Exception{
-        Consumidor consumidor = ServicoConsumidor.verificarSeOEmailJaEstaCadastrado(email);
+        Consumidor consumidor = ServicoConsumidor.verificarEmailConsumidor(email);
         Fatura fatura = new Fatura(valor, dataVencimento, consumidor);
         faturas.add(fatura);
         return fatura;
