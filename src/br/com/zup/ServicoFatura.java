@@ -18,7 +18,6 @@ public class ServicoFatura {
             if (referencia.getConsumidor().getEmail().equalsIgnoreCase(email)){
                 faturasUsuario.add(referencia);
             }
-        }
-        return faturasUsuario;
+        }return faturasUsuario;
     }
 }

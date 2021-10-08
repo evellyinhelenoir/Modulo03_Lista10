@@ -26,7 +26,8 @@ public class Sistema {
         String dataVencimento = capturarDados("Digite a data de vencimento da fatura: ").nextLine();
         return ServicoFatura.cadastrarFaturas(email, valor, dataVencimento);
     }
-    public static List<Fatura> pesquisarFaturas(String email){
+    public static List<Fatura> pesquisarFaturas(){
+        String email = capturarDados("Digite o email do consumidor").nextLine();
         List<Fatura> faturas = ServicoFatura.verificarFaturasPeloEmailConsumidor(email);
         return faturas;
     }
@@ -43,8 +44,8 @@ public class Sistema {
                 Consumidor consumidor = cadastrarConsumidores();
                 System.out.println(consumidor);
             }else if (opcao == 3){
-                pesquisarFaturas(capturarDados("Digite o email do consumidor.").nextLine());
-                System.out.println();
+                List<Fatura> fatura = pesquisarFaturas();
+                System.out.println(fatura);
             }else if (opcao == 4 ){
                 System.out.println("Obrigada por utilizar nossos serviços!");
                 loop = false;
